@@ -1,0 +1,42 @@
+:root{--bg:#05070c;--panel:#0d1119;--line:#1d2431;--text:#e9edf5;--mute:#8b95a9;
+--paint:#9aa6b8;--amb:#4fd1ff;--trim:#1a2030;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Unbounded,"Segoe UI",sans-serif;font-weight:300;margin:0;letter-spacing:-.01em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+nav b{font:500 18px Unbounded,sans-serif;letter-spacing:.08em}
+.btn{display:inline-block;background:var(--text);color:#05070c;border:0;border-radius:999px;padding:14px 26px;font:500 16px "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer}
+.btn.ghost{background:none;color:var(--text);border:1px solid var(--line)}
+.btn:focus-visible,.sw:focus-visible,.seg button:focus-visible{outline:2px solid var(--amb);outline-offset:3px}
+.hero{position:relative;overflow:hidden;padding-bottom:56px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 62%,color-mix(in srgb,var(--amb) 22%,transparent),transparent 70%)}
+.hero .wrap{position:relative}
+h1{font-size:clamp(34px,6.4vw,76px);line-height:1.04;max-width:12em;margin:36px 0 18px}
+.lede{color:var(--mute);max-width:34em;margin:0 0 28px}
+.stage{position:relative;margin:20px -8px 0}
+.stage svg{display:block;width:100%;height:auto}
+.view{display:none}.view.on{display:block;animation:fade .5s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.bar{animation:fade 2.4s ease-out 1}
+.panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:8px}
+.panel h3{font-size:14px;color:var(--mute);margin-bottom:14px;font-weight:500}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.sw{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}
+.sw[aria-pressed=true]{border-color:var(--text);box-shadow:0 0 0 3px var(--bg),0 0 0 4px var(--text)}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;width:fit-content}
+.seg button{background:none;border:0;color:var(--mute);padding:10px 18px;font:inherit;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--text);color:#05070c}
+.sum{margin:18px 0 0;color:var(--mute);font-size:15px}
+section{padding:96px 0}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-top:40px}
+.specs div{border-top:1px solid var(--line);padding-top:18px}
+.specs strong{display:block;font:300 34px Unbounded,sans-serif;margin-bottom:4px}
+.specs span{color:var(--mute);font-size:15px}
+h2{font-size:clamp(26px,4vw,44px);line-height:1.12;max-width:16em}
+.cta{text-align:center;background:linear-gradient(var(--bg),#0a0f1a)}
+.cta h2{margin:0 auto 18px}.cta p{color:var(--mute);margin:0 auto 28px;max-width:30em}
+footer{padding:28px 0 40px;color:var(--mute);font-size:14px;text-align:center}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}

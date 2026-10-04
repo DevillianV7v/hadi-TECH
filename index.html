@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Haditech: the electric car</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+<div class="wrap">
+<nav><b>HADITECH</b><a class="btn ghost" href="#reserve">Book a test drive</a></nav>
+<h1>The electric car that looks like tomorrow.</h1>
+<p class="lede">Haditech pairs a sculpted aerodynamic body with a quiet, screen-first cabin. Choose the paint, the trim and the light you want to sit in.</p>
+
+<div class="stage" aria-live="polite">
+<div class="view on" id="v-ext">
+<svg viewBox="0 0 800 320" role="img" aria-label="Haditech electric car, side view">
+<defs><linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3a52"/><stop offset="1" stop-color="#0a0f18"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="8"/></filter></defs>
+<ellipse cx="400" cy="272" rx="340" ry="14" fill="var(--amb)" opacity=".35" filter="url(#blur)"/>
+<path d="M50 222C50 196 86 186 150 178L262 122C304 98 384 88 474 92C566 96 628 124 686 164L742 180C762 186 768 204 762 220L744 230H62Z" fill="var(--paint)"/>
+<path d="M50 222C50 196 86 186 150 178L262 122C304 98 384 88 474 92C566 96 628 124 686 164L742 180C762 186 768 204 762 220L744 230H62Z" fill="url(#sh)"/>
+<path d="M276 134C312 112 384 104 462 108C540 112 592 134 640 166L292 166Z" fill="url(#gl)"/>
+<path d="M462 108L452 166" stroke="var(--paint)" stroke-width="6"/>
+<path d="M120 204H700" stroke="#000" stroke-opacity=".25" stroke-width="2"/>
+<rect class="bar" x="738" y="190" width="26" height="5" rx="2.5" fill="var(--amb)"/>
+<rect class="bar" x="48" y="192" width="30" height="5" rx="2.5" fill="#ff4d5e"/>
+<g><circle cx="190" cy="232" r="46" fill="#05070c"/><circle cx="190" cy="232" r="30" fill="#1a2030" stroke="#3a4560" stroke-width="3"/><circle cx="190" cy="232" r="8" fill="#3a4560"/>
+<circle cx="610" cy="232" r="46" fill="#05070c"/><circle cx="610" cy="232" r="30" fill="#1a2030" stroke="#3a4560" stroke-width="3"/><circle cx="610" cy="232" r="8" fill="#3a4560"/></g>
+</svg></div>
+
+<div class="view" id="v-int">
+<svg viewBox="0 0 800 360" role="img" aria-label="Haditech cabin, driver view">
+<defs><linearGradient id="ws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="color-mix(in srgb,var(--amb) 30%,#0b1220)"/></linearGradient>
+<filter id="b2"><feGaussianBlur stdDeviation="6"/></filter></defs>
+<rect width="800" height="360" fill="#070a10"/>
+<path d="M90 40C240 14 560 14 710 40L760 190H40Z" fill="url(#ws)"/>
+<path d="M40 190C220 168 580 168 760 190L800 360H0Z" fill="var(--trim)"/>
+<path d="M60 200C230 182 570 182 740 200" stroke="var(--amb)" stroke-width="14" fill="none" opacity=".25" filter="url(#b2)"/>
+<path d="M60 200C230 182 570 182 740 200" stroke="var(--amb)" stroke-width="4" fill="none"/>
+<rect x="290" y="206" width="220" height="92" rx="10" fill="#05070c" stroke="#2a3248"/>
+<path d="M310 270C350 240 380 280 420 250C450 230 470 250 492 240" stroke="var(--amb)" stroke-width="3" fill="none"/>
+<text x="310" y="232" fill="#8b95a9" font-size="14" font-family="sans-serif">Range 520 km</text>
+<ellipse cx="170" cy="290" rx="84" ry="52" fill="none" stroke="#05070c" stroke-width="16"/>
+<ellipse cx="170" cy="290" rx="84" ry="52" fill="none" stroke="var(--amb)" stroke-width="2" opacity=".6"/>
+<path d="M610 360C610 310 640 290 700 290L800 290V360Z" fill="#0d1119"/>
+</svg></div>
+</div>
+
+<div class="panel" role="group" aria-label="Your preferences">
+<div><h3>View</h3><div class="seg" id="g-view"><button aria-pressed="true" data-v="ext">Exterior</button><button aria-pressed="false" data-v="int">Interior</button></div></div>
+<div><h3>Paint</h3><div class="row" id="g-paint"></div></div>
+<div><h3>Cabin light</h3><div class="row" id="g-amb"></div></div>
+<div><h3>Interior trim</h3><div class="row" id="g-trim"></div></div>
+</div>
+<p class="sum" id="sum"></p>
+</div>
+</header>
+
+<section>
+<div class="wrap">
+<h2>Built around the drive, not the dashboard.</h2>
+<div class="specs">
+<div><strong>520 km</strong><span>Estimated range on one charge</span></div>
+<div><strong>3.4 s</strong><span>0 to 100 km/h</span></div>
+<div><strong>20 min</strong><span>Fast charge from 10 to 80 percent</span></div>
+<div><strong>0.21 Cd</strong><span>Drag coefficient of the body</span></div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="reserve">
+<div class="wrap">
+<h2>See your configuration in person.</h2>
+<p>Send us your choices and we will arrange a test drive with the car set up your way.</p>
+<a class="btn" id="mail" href="mailto:hello@haditech.example">Book a test drive</a>
+</div>
+</section>
+<footer>Haditech. Figures shown are targets and may change.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
